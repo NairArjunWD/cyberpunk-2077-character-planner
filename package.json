@@ -1,0 +1,28 @@
+{
+  "name": "cyberpunk-2077-character-planner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NairArjunWD/cyberpunk-2077-character-planner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NairArjunWD/cyberpunk-2077-character-planner/issues"
+  },
+  "homepage": "https://github.com/NairArjunWD/cyberpunk-2077-character-planner#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.7.7",
+    "node": "^12.12.0",
+    "pug": "^2.0.4"
+  }
+}

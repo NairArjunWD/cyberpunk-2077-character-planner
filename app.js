@@ -8,8 +8,17 @@ const PORT = 3000;
 
 require('./db/db');
 
+app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug')
+
+app.get('/:index', (req, res) => {
+
+    res.render('char-info/index.pug')
+})
+
 
 // main hub
 app.get('/', (req, res) => {

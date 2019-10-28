@@ -21,3 +21,8 @@ html
                     li=info.sex
                     li=info.ethnicity
                     li=info.background
+            section
+                a(href='/infos/info._id/edit') Edit
+            section
+                form(action=`/infos/${info._id}?_method=DELETE`, method="post")
+                    button(type="submit") Delete

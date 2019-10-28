@@ -12,15 +12,17 @@ html
                         a(href='/infos') Character List
         main
             h2 Character Info
-            form(action="/infos/info.id?_method=PUT", method="post")
+            form(action=`/infos/${info._id}/edit.pug`, method="post")
                 input(
                     type="text" 
                     name="name"
+                    value=`${info.name}`
                 )
                 br 
                 input(
                     type="number" 
                     name="age"
+                    value=`${info.age}`
                 )
                 br
                 p Voice:
@@ -58,6 +60,7 @@ html
                 input(
                     type="text" 
                     name="ethnicity"
+                    value=`${info.ethnicity}`
                 )
                 br
                 label(for="background") Background
@@ -65,5 +68,6 @@ html
                     name="background" 
                     cols="30" 
                     rows="10"
+                    value=`${info.background}`
                 )
-                button(type="submit") Submit
+                button(type="submit", value='Update') Submit

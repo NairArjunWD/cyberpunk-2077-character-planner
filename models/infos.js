@@ -6,11 +6,11 @@ const infoSchema = new mongoose.Schema({
     voice: String,
     sex: String,
     ethnicity: String,
-    background: String
-    // builds: [{
-    //     type: mongoose.Schema.Types.ObjectId,
-    //     ref: 'Build'
-    // }]
+    background: String,
+    builds: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Build'
+    }]
 });
 
 const Info = mongoose.model('Info', infoSchema);

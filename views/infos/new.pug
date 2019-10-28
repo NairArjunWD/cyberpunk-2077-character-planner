@@ -9,10 +9,42 @@ html
                     li 
                         a(href='/') Main Hub
                     li 
-                        a(href='/infos/') Create a New Character  
+                        a(href='/infos/') Characters
         main 
             form(action="infos", method="post")
-                input(type="text", name="name")
-                input(type="number", name="age")
-                input(type="radio", name="voice")
-                input(type="radio", name="sex")
+                input(
+                    type="text" 
+                    name="name"
+                    placeholder='name'
+                )
+                br 
+                input(
+                    type="number" 
+                    name="age"
+                    placeholder='age'
+                )
+                br
+                p Voice:
+               
+                label(for="voice") Male
+                input(type="radio", name="voice", value="male")
+                br
+                label(for="voice") Female
+                input(type="radio", name="voice", value="female")
+                br
+                p Sex:
+                |
+                label(for="sex") Male
+                input(type="radio", name="sex", value='male')
+                br
+                label(for="sex") Female
+                input(type="radio", name="sex", value='female')
+                br
+                input(
+                    type="text" 
+                    name="ethnicity"
+                    placeholder='ethnicity'
+                )
+                br
+                label(for="background") Background
+                textarea(name="background", cols="30", rows="10") 

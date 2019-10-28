@@ -16,7 +16,7 @@ router.get('/new', (req, res) => {
 
 router.post('/', async(req, res) => {
     try {
-        const createdCharInfo = await CharInfo.create(req.body);
+        const createdInfo = await Info.create(req.body);
         res.redirect('/infos')
     } catch {
         res.send(err)

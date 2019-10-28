@@ -12,7 +12,7 @@ html
                         a(href='/infos') Character List
         main
             h2 Character Info
-            form(action=`/infos/${info._id}/edit.pug`, method="post")
+            form(action=`/infos/${info._id}?_method=PUT`, method="post")
                 input(
                     type="text" 
                     name="name"

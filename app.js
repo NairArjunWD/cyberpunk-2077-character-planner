@@ -14,9 +14,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug')
 
+// char-info index
 app.get('/:index', (req, res) => {
 
     res.render('char-info/index.pug')
+})
+
+// char-info new
+app.get('/new', (req, res) => {
+    res.render('char-info/new.pug');
 })
 
 

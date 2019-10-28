@@ -1,0 +1,18 @@
+html
+    head 
+        title=title
+    body
+        header
+            h1 Create Your Character's Info 
+            nav 
+                ul
+                    li 
+                        a(href='/') Main Hub
+                    li 
+                        a(href='/char-info/') Create a New Character  
+        main 
+            form(action="char-info", method="post")
+                input(type="text", name="name")
+                input(type="number", name="age")
+                input(type="radio", name="voice")
+                input(type="radio", name="sex")

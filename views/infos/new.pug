@@ -1,6 +1,6 @@
 html
     head 
-        title=title
+        title create
     body
         header
             h1 Create Your Character's Info 
@@ -11,7 +11,7 @@ html
                     li 
                         a(href='/infos/') Characters
         main 
-            form(action="infos", method="post")
+            form(action="/infos", method="post")
                 input(
                     type="text" 
                     name="name"
@@ -27,18 +27,34 @@ html
                 p Voice:
                
                 label(for="voice") Male
-                input(type="radio", name="voice", value="male")
+                input(
+                    type="radio" 
+                    name="voice" 
+                    value="male"
+                )
                 br
                 label(for="voice") Female
-                input(type="radio", name="voice", value="female")
+                input(
+                    type="radio" 
+                    name="voice" 
+                    value="female"
+                )
                 br
                 p Sex:
                 |
                 label(for="sex") Male
-                input(type="radio", name="sex", value='male')
+                input(
+                    type="radio" 
+                    name="sex" 
+                    value='male'
+                )
                 br
                 label(for="sex") Female
-                input(type="radio", name="sex", value='female')
+                input(
+                    type="radio" 
+                    name="sex" 
+                    value='female'
+                )
                 br
                 input(
                     type="text" 
@@ -47,4 +63,9 @@ html
                 )
                 br
                 label(for="background") Background
-                textarea(name="background", cols="30", rows="10") 
+                textarea(
+                    name="background" 
+                    cols="30" 
+                    rows="10"
+                )
+                button(type="submit") Submit

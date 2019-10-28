@@ -2,10 +2,19 @@ html
     head 
         title=title
     body
-        h1 Character Info 
-        nav 
+        header
+            h1 Character Info 
+            nav 
+                ul
+                    li 
+                        a(href='/') Main Hub
+                    li 
+                        a(href='/infos/new') Create a New Character
+        main
+            h2 My Characters
             ul
-                li 
-                    a(href='/') Main Hub
-                li 
-                    a(href='/infos/new') Create a New Character  
+                for info in infos
+                    li=info.name
+                        a(href=`/infos/${info._id}`) info.id
+                    //- a(href=info._id) info
+                             

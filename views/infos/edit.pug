@@ -1,0 +1,69 @@
+html
+    head   
+        title edit
+    body
+        header
+            h1 Edit
+            nav 
+                ul 
+                    li 
+                        a(href='/') Main Hub
+                    li 
+                        a(href='/infos') Character List
+        main
+            h2 Character Info
+            form(action="/infos/info.id?_method=PUT", method="post")
+                input(
+                    type="text" 
+                    name="name"
+                )
+                br 
+                input(
+                    type="number" 
+                    name="age"
+                )
+                br
+                p Voice:
+               
+                label(for="voice") Male
+                input(
+                    type="radio" 
+                    name="voice" 
+                    value="male"
+                )
+                br
+                label(for="voice") Female
+                input(
+                    type="radio" 
+                    name="voice" 
+                    value="female"
+                )
+                br
+                p Sex:
+                |
+                label(for="sex") Male
+                input(
+                    type="radio" 
+                    name="sex" 
+                    value='male'
+                )
+                br
+                label(for="sex") Female
+                input(
+                    type="radio" 
+                    name="sex" 
+                    value='female'
+                )
+                br
+                input(
+                    type="text" 
+                    name="ethnicity"
+                )
+                br
+                label(for="background") Background
+                textarea(
+                    name="background" 
+                    cols="30" 
+                    rows="10"
+                )
+                button(type="submit") Submit

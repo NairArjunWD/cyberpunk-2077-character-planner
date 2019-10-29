@@ -19,8 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 const infosController = require('./controllers/infos.js');
 app.use('/infos', infosController);
 
-// const buildsController = require('./controllers/builds.js');
-// app.use('/builds', buildsController);
+const buildsController = require('./controllers/builds.js');
+app.use('/builds', buildsController);
 
 
 // main hub

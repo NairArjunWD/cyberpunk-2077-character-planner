@@ -19,17 +19,38 @@ router.get('/', (req, res) => {
 // builds new route
 router.get('/new', (req, res) => {
 
-    Build.find({}, (err, allInfos) => {
+    Info.find({}, (err, allInfos) => {
         if (err) {
             res.send(err)
         } else {
-            console.log(allInfos)
+            console.log(allInfos, '<---- this is the infos')
             res.render('builds/new.pug', {
                 infos: allInfos
             });
         }
     })
 });
+
+// builds show route
+router.get('/:id', (req, res) => {
+    Info.findOne({'builds': req.params.id})
+        .populate(
+            {
+                path: 'builds',
+                match: {_id: req.params.id}
+            })
+        .exec((err, foundInfo) => {
+            console.log(foundInfo, '<-----this is the info')
+            if (err) {
+                res.send(err);
+            } else {
+                res.render('builds/show.pug', {
+                    info: foundInfo,
+                    build: foundInfo.builds[0]
+                })
+            }
+        })
+})
 
 router.post('/', async (req, res) => {
     try {

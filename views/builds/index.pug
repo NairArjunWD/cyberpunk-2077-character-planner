@@ -14,7 +14,7 @@ html
             h2 My Characters
             ul
                 for build in builds
-                    li=build.name
-                        a(href=`/builds/${build._id}`) build.id
+                    li
+                        a(href=`/builds/${build._id}`) #{build.bname}
 
                              

@@ -9,12 +9,12 @@ html
                     li 
                         a(href='/') Main Hub
                     li 
-                        a(href='/infos/') Characters
+                        a(href='/builds/') Characters
         main 
-            form(action="/infos", method="post")
+            form(action="/builds", method="post")
                 select(name='infoId')
                     for info in infos
-                        option(value=`${info._id}` + info.name)
+                        option(value=`${info._id}`) #{info.name}
                     //- a(href=info._id) info
                 
                 p Build Name:
@@ -65,5 +65,14 @@ html
                     name="class" 
                     value='netrunner'
                 )
+                br
+                |
+                p Weapons
+                |
+                label(for="melee") Melee Weapon
+                select(name="melee")
+                    option(value="Mantis Blades") Mantis Blades
+                    option(value="Gravity Hammer") Gravity Hammer
+                    option(value="Katana") Katana
                 br
                 button(type="submit") Submit

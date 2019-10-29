@@ -14,7 +14,7 @@ html
             h2 My Characters
             ul
                 for info in infos
-                    li=info.name
-                        a(href=`/infos/${info._id}`) info.id
+                    li
+                        a(href=`/infos/${info._id}`) #{info.name}
                     //- a(href=info._id) info
                              

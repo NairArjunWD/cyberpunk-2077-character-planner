@@ -35,7 +35,7 @@ router.post('/', async (req, res) => {
     try {
         const createdBuild = await Build.create(req.body);
 
-        const foundInfo = await Info.findById('someID')
+        const foundInfo = await Info.findById('infoId')
 
         foundInfo.builds.push(createdBuild);
         await foundInfo.save();

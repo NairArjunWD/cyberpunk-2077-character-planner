@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 const buildSchema = new mongoose.Schema({
-    name: String
+    bname: String,
+    background: String,
+    class: String
 });
 
 const Build = mongoose.model('Build', buildSchema);

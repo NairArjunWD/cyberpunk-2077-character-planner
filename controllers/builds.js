@@ -31,4 +31,18 @@ router.get('/new', (req, res) => {
     })
 });
 
+router.post('/', async (req, res) => {
+    try {
+        const createdBuild = await Build.create(req.body);
+
+        const foundInfo = await Info.findById('someID')
+
+        foundInfo.builds.push(createdBuild);
+        await foundInfo.save();
+        res.redirect('/builds')
+    } catch (err) {
+        res.send(err)
+    }
+});
+
 module.exports = router;

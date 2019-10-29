@@ -12,6 +12,10 @@ html
                         a(href='/infos/') Characters
         main 
             form(action="/infos", method="post")
+                select(name='infoId')
+                    for info in infos
+                        option(value=`${info._id}` + info.name)
+                    //- a(href=info._id) info
                 p Background:
                
                 label(for="background") Nomad
@@ -58,3 +62,4 @@ html
                     value='netrunner'
                 )
                 br
+                button(type="submit") Submit

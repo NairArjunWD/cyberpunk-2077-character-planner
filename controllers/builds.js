@@ -53,10 +53,11 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     try {
         const createdBuild = await Build.create(req.body);
 
-        const foundInfo = await Info.findById('infoId')
+        const foundInfo = await Info.findById(req.body.infoId)
 
         foundInfo.builds.push(createdBuild);
         await foundInfo.save();

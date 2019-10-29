@@ -73,7 +73,7 @@ router.delete('/:id', (req, res) => {
             res.send(err)
         } else {
             console.log(deletedInfo)
-            Info.remove({
+            Build.remove({
                 _id: {
                     $in: deletedInfo.builds
                 }

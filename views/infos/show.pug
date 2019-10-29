@@ -24,5 +24,9 @@ html
             section
                 a(href=`/infos/${info._id}/edit`) Edit
             section
+                h2 Builds
+                //- ul
+                //-     li
+            section
                 form(action=`/infos/${info._id}?_method=DELETE`, method="post")
                     button(type="submit") Delete

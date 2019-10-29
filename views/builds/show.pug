@@ -14,14 +14,12 @@ html
                         a(href='/builds') Return to List 
         main
             section
-                h2 Info
+                h2 Info 
                 ul 
                     li=build.background
-                    li=info.class
+                    li=build.class
             section
-                a(href=`/builds/${builds._id}/edit`) Edit
-            section
-                build.body
+                a(href=`/builds/${build._id}/edit`) Edit
             section
                 form(action=`/builds/${build._id}?_method=DELETE`, method="post")
                     button(type="submit") Delete

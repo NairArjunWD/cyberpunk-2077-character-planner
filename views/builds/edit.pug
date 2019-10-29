@@ -1,0 +1,72 @@
+html
+    head   
+        title edit
+    body
+        header
+            h1 Edit
+            nav 
+                ul 
+                    li 
+                        a(href='/') Main Hub
+                    li 
+                        a(href='/builds') Build List
+        main
+            h2 Edit the Build
+            form(action=`/builds/${build._id}?_method=PUT`, method="post")
+                p Background:
+               
+                label(for="background") Nomad
+                input(
+                    type="radio" 
+                    name="background" 
+                    value="nomad"
+                )
+                br
+                label(for="background") Street Kid
+                input(
+                    type="radio" 
+                    name="background" 
+                    value="street"
+                )
+                br
+                label(for="background") Corpo
+                input(
+                    type="radio" 
+                    name="background" 
+                    value="corpo"
+                )
+                br
+                p Class:
+                |
+                label(for="class") Solo
+                input(
+                    type="radio" 
+                    name="class" 
+                    value='solo'
+                )
+                br
+                label(for="class") Techie
+                input(
+                    type="radio" 
+                    name="class" 
+                    value='techie'
+                )
+                br
+                label(for="class") Netrunner
+                input(
+                    type="radio" 
+                    name="class" 
+                    value='netrunner'
+                )
+                br
+                |
+                p Weapons
+                |
+                p Melee Weapon
+                select(name="melee")
+                    option(value="Mantis Blades") Mantis Blades
+                    option(value="Gravity Hammer") Gravity Hammer
+                    option(value="Katana") Katana
+                br
+                button(type="submit", value='Update') Update
+                a(href=`/builds/${build._id}`) Back

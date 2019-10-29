@@ -14,10 +14,11 @@ html
                         a(href='/builds') Return to List 
         main
             section
-                h2 Info 
+                h2 #{build.bname}'s' Info 
                 ul 
                     li=build.background
                     li=build.class
+                    li=build.melee
             section
                 a(href=`/builds/${build._id}/edit`) Edit
             section

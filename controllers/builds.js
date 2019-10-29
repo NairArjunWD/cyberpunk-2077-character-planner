@@ -52,6 +52,53 @@ router.get('/:id', (req, res) => {
         })
 })
 
+// build edit route
+router.get('/:id/edit', (req, res) => {
+    Build.findById(req.params.id, (err, foundBuild) => {
+        if (err) {
+            res.send(err);
+        } else {
+            res.render('builds/edit.pug', {
+                build: foundBuild
+            })
+        }
+    })
+})
+
+router.put('/:id', (req, res) => {
+    Build.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updateBuild) => {
+        if (err) {
+            res.send(err)
+        } else {
+            res.redirect('/builds/' + req.params.id)
+        }
+    })
+})
+
+// build delete
+
+router.delete('/:id', (req, res) => {
+
+    Build.findByIdAndRemove(req.params.id, (err, response) => {
+
+        Info.findOne({ 'builds': req.params.id }, (err, foundInfo) => {
+            if (err) {
+                res.send(err);
+            } else {
+                // attached to mongo arrays, has a remove that takes
+                // an id
+                foundInfo.builds.remove(req.params.id);
+                // if we muitate a document, we need
+                foundInfo.save((err, updatedInfo) => {
+                    console.log(updatedInfo, ",--- this update info")
+                    res.redirect('/builds')
+                })
+            }
+        })
+
+    });
+});
+
 router.post('/', async (req, res) => {
     console.log(req.body)
     try {

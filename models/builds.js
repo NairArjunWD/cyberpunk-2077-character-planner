@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const buildSchema = new mongoose.Schema({
     bname: String,
     background: String,
-    class: String
+    class: String,
+    melee: String
 });
 
 const Build = mongoose.model('Build', buildSchema);

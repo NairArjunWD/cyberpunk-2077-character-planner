@@ -2,9 +2,16 @@ const express = require('express');
 const app = express();
 const pug = require('pug');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const flash = require('connect-flash');
 const methodOverride = require('method-override');
+const passport = require('passport')
 const session = require('express-session');
+const setUpPassport = require("./setuppassport");
 const PORT = 3000;
+
+// mongoose.connect("mongodb://localhost:27017/test");
+setUpPassport();
 
 require('./db/db');
 
@@ -14,15 +21,20 @@ require('./db/db');
 app.set('view engine', 'pug')
 
 app.use(session({
-    secret: "this is a secret string",
-    resave: false,
-    saveUninitialized: false
-}))
+    secret: "ilikecurry53324234324326rg65r7d65rsSTWW%knbfkjbfn#ETRZ",
+    resave: true,
+    saveUninitialized: true
+}));
+app.use(flash());
 
 app.use(express.static('public'))
 
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 const infosController = require('./controllers/infos.js');
 app.use('/infos', infosController);
@@ -41,6 +53,7 @@ app.get('/', (req, res) => {
         logOut: req.session.logOutMsg
     })
 });
+
 
 
 app.listen(PORT, () => {

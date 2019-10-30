@@ -1,0 +1,27 @@
+link(rel="stylesheet", href="/css/style.css")
+
+.nav
+    .nav-header 
+        .nav-left
+            a(href="/" .nav-link) Home
+        .nav-center
+        .nav-right
+            a(href="/registration" .nav-link) Registration
+            a(href="/login" .nav-link) Login
+            .hamburger-menu
+                .bar
+                .bar
+                .bar
+    .overlay    
+        .overlay-content
+            a(href="#" .overlay-link) One
+            a(href="#" .overlay-link) Two 
+
+script.
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const overlay = document.querySelector('.overlay');
+    hamburgerMenu.addEventListener('click', function() {
+        hamburgerMenu.classList.toggle('open');
+        overlay.classList.toggle('show');
+    })
+

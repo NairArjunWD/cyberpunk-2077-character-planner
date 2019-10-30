@@ -3,8 +3,13 @@ html
     head 
         title=title
         link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
-        link(rel="stylesheet", type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection")
-        link(rel="stylesheet", href="../public/css/style.css")
+        link(rel="stylesheet", type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css"  media="screen,projection")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
+        link(rel="stylesheet", href="/css/style.css")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        //- options.basedir
+        include partials/navbar.pug
     body
         //- h1=message
         h1 Main Hub
@@ -14,21 +19,68 @@ html
                     a(href='/infos') Character Info
                 li 
                     a(href='/builds') Character Build  
+                l1 
+                    a(href='/auth/login') Login
+                li 
+                    a(href='/auth/registration') Register
+        
+        .switch
+            label
+                | Off
+                input(type="checkbox")
+                span.lever
+                |    On
 
-                logOut
-                message
-
-                h3 Login
-                form(action="/auth/login", method="post")
-                    input(type="text" name="username" placeholder="username")
-                    input(type="email" name="email" placeholder="email")
-                    input(type="password" name="password" placeholder="password")
-                    button(type="submit") Login
                 
-                h3 Registration
-                form(action="/auth/registration", method="post")
-                    input(type="text" name="username" placeholder="username")
-                    input(type="email" name="email" placeholder="email")
-                    input(type="password" name="password" placehoewrlder="password")
-                    button(type="submit") Login
-    
+
+        .parallax-container
+            .parallax
+                img(src='https://vignette.wikia.nocookie.net/cyberpunk/images/c/c9/Johnny_Silverhand_Keanu_Reeves.jpg/revision/latest?cb=20190610022538')
+        .section.white
+            .row.container
+                h2.header Parallax
+                p.grey-text.text-darken-3.lighten-3
+                | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
+        .parallax-container
+            .parallax
+                img(src='https://vignette.wikia.nocookie.net/cyberpunk/images/7/75/Misc_Image_Night_City.jpg/revision/latest?cb=20180610223752')
+        .section.white
+            .row.container
+                h2.header Parallax
+                .carousel.carousel-slider.center(style='height: 400px;')
+                    .carousel-fixed-item.center.with-indicators
+                        a.btn.waves-effect.white.grey-text.darken-text-2 button
+                    .carousel-item.red.white-text.active(href='#one!', style='z-index: 0; opacity: 1; visibility: visible; transform: translateX(0px) translateX(0px) translateX(0px) translateZ(0px);')
+                        h2 First Panel
+                        p.white-text This is your first panel
+                    .carousel-item.amber.white-text(href='#two!', style='transform: translateX(0px) translateX(566px) translateZ(0px); z-index: -1; opacity: 1; visibility: visible;')
+                        h2 Second Panel
+                        p.white-text This is your second panel
+                    .carousel-item.green.white-text(href='#three!', style='transform: translateX(0px) translateX(-1132px) translateZ(0px); z-index: -2; opacity: 1; visibility: visible;')
+                        h2 Third Panel
+                        p.white-text This is your third panel
+                    .carousel-item.blue.white-text(href='#four!', style='transform: translateX(0px) translateX(-566px) translateZ(0px); z-index: -1; opacity: 1; visibility: visible;')
+                        h2 Fourth Panel
+                        p.white-text This is your fourth panel
+                    ul.indicators
+                        li.indicator-item.active
+                        li.indicator-item
+                        li.indicator-item
+                        li.indicator-item
+
+
+        .parallax-container
+            .parallax
+                img(src='https://vignette.wikia.nocookie.net/cyberpunk/images/f/f9/Misc_Image_Beauty.jpg/revision/latest?cb=20180610223751&format=original')
+
+        script(type="text/javascript" src="js/materialize.min.js")      
+        script.
+            | $('.carousel.carousel-slider').carousel({
+            |   fullWidth: false,
+            |   indicators: true
+            | });
+        
+
+            
+                
+                

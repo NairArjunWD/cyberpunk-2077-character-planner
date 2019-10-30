@@ -3,10 +3,20 @@ const router = express.Router();
 const Info = require('../models/infos');
 const Build = require('../models/builds');
 
+const isLoggedIn = (req, res, next) => {
+    if(req.session.logged) {
+        next()
+    } else {
+        res.redirect('/')
+    }
+}
+
+router.use(isLoggedIn)
+
 // info index
 router.get('/', (req, res) => {
 
-    Info.find({}, (err, allInfos) => {
+    Info.find({createdBy: req.session.userId}, (err, allInfos) => {
         if(err){
             res.send(err);
         } else {
@@ -88,6 +98,7 @@ router.delete('/:id', (req, res) => {
 router.post('/', async (req, res) => {
     if (req.session.logged === true) {
         try {
+            req.body.createdBy = req.session.userId
             const createdInfo = await Info.create(req.body);
             res.redirect('/infos')
         } catch {

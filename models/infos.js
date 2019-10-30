@@ -7,6 +7,7 @@ const infoSchema = new mongoose.Schema({
     sex: String,
     ethnicity: String,
     background: String,
+    createdBy: String,
     builds: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Build'

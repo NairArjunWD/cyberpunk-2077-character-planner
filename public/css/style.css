@@ -1,4 +1,180 @@
 body {
-  background-image: green;
+  font: 100% "Source Code Pro", monospace;
+  color: #d40000;
+  background-color: #000000;
+  margin: 4rem 0 0 0;
+  height: 77rem;
+}
+
+.nav {
+  position: fixed;
+  border-bottom: 1px solid black;
+  width: 100%;
+  top: 0;
+  background-color: white;
+}
+
+.nav-header {
+  max-width: 75%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav-left {
+  width: 33.333%;
+  text-align: left;
+}
+
+.nav-center {
+  width: 33.333%;
+  text-align: center;
+}
+
+.nav-right {
+  width: 60%;
+  text-align: right;
+}
+
+.nav-link {
+  text-decoration: none;
+  margin-left: 3%;
+  text-transform: uppercase;
+  color: black;
+}
+
+.nav-link:hover {
+  color: dodgerblue;
+  cursor: pointer;
+}
+
+.hamburger-menu {
+  width: 40px;
+  height: 25px;
+  position: relative;
+  margin: 14px 15% 0 auto;
+  z-index: 2;
+  /* display: none; */
+}
+
+.bar {
+  display: block;
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  left: 0;
+  border-radius: 6px;
+  background-color: black;
+  -webkit-transition: all .50s ease-in-out;
+  transition: all .50s ease-in-out;
+}
+
+.bar:nth-child(1) {
+  top: 0px;
+}
+
+.bar:nth-child(2) {
+  top: 22.5%;
+}
+
+.bar:nth-child(3) {
+  top: 45%;
+}
+
+.open > .bar {
+  -webkit-transition: all .50s ease-in-out;
+  transition: all .50s ease-in-out;
+  background-color: white;
+  z-index: 2;
+}
+
+.open > .bar:nth-child(1) {
+  top: 45%;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  /* transition: all .50s ease-in-out; */
+}
+
+.open > .bar:nth-child(2) {
+  left: -60px;
+  opacity: 0;
+  /* transition: all .50s ease-in-out; */
+}
+
+.open > .bar:nth-child(3) {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+  /* transition: all .50s ease-in-out; */
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  top: 0;
+  left: -123rem;
+  z-index: 1;
+  -webkit-transition: all .60s ease-in-out;
+  transition: all .60s ease-in-out;
+}
+
+.overlay.show {
+  left: 0;
+}
+
+.overlay-content {
+  position: relative;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay-link {
+  color: white;
+  text-decoration: none;
+  font-size: 36px;
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .hamburger-menu {
+    display: block;
+  }
+  .nav-right > a {
+    display: none;
+  }
+}
+
+nav {
+  text-decoration: none;
+}
+
+.parallax-container .parallax img {
+  opacity: 1.0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+
+img {
+  border-style: none;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,7 +1,7 @@
 html
     head
         title show
-        link(rel="stylesheet", href="../css/style.css")
+        link(rel="stylesheet", href="/css/style.css")
     body
         header
             h1 Character Show
@@ -22,6 +22,7 @@ html
                     li=info.sex
                     li=info.ethnicity
                     li=info.background
+                    li=info.createdBy
             section
                 a(href=`/infos/${info._id}/edit`) Edit
             section

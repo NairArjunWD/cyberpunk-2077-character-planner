@@ -1,0 +1,12 @@
+html
+    head
+        title
+    body
+        h1 Edit your profile    
+        form(action="/edit", method="post")
+            input(type="text" name="displayName" placeholder=' Display Name' 
+            value = `${currentUser.displayName} || "" `)
+
+            textarea(name="tagline" placeholder="Wake the #$%@ Samurai. We have a city to burn.")
+
+            input(type="submit", value="Update")

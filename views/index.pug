@@ -2,7 +2,9 @@
 html
     head 
         title=title
-        link(rel="stylesheet", href="../css/style.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet", type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection")
+        link(rel="stylesheet", href="../public/css/style.css")
     body
         //- h1=message
         h1 Main Hub
@@ -27,6 +29,6 @@ html
                 form(action="/auth/registration", method="post")
                     input(type="text" name="username" placeholder="username")
                     input(type="email" name="email" placeholder="email")
-                    input(type="password" name="password" placeholder="password")
+                    input(type="password" name="password" placehoewrlder="password")
                     button(type="submit") Login
     

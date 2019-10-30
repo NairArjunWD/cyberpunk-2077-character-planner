@@ -13,6 +13,12 @@ require('./db/db');
 // app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug')
 
+app.use(session({
+    secret: "this is a secret string",
+    resave: false,
+    saveUninitialized: false
+}))
+
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -22,6 +28,8 @@ app.use('/infos', infosController);
 const buildsController = require('./controllers/builds.js');
 app.use('/builds', buildsController);
 
+const usersController = require('./controllers/users.js');
+app.use('/auth', usersController);
 
 // main hub
 app.get('/', (req, res) => {

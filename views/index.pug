@@ -11,7 +11,16 @@ html
                     a(href='/infos') Character Info
                 li 
                     a(href='/builds') Character Build  
-                li 
-                    a(href='/users') Login
-                li  
-                    a(href="/users") Registration
+                h3 Login
+                form(action="/auth/login", method="post")
+                    input(type="text" name="username" placeholder="username")
+                    input(type="email" name="email" placeholder="email")
+                    input(type="password" name="password" placeholder="password")
+                    button(type="submit") Login
+                
+                h3 Registration
+                form(action="/auth/registration", method="post")
+                    input(type="text" name="username" placeholder="username")
+                    input(type="email" name="email" placeholder="email")
+                    input(type="password" name="password" placeholder="password")
+                    button(type="submit") Login

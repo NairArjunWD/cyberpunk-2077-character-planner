@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
                 req.session.username = foundUser.username;
                 req.session.logged = true;
 
-                res.redirect('/authors')
+                res.redirect('/infos')
 
 
             } else {
@@ -83,7 +83,7 @@ router.post('/registration', async (req, res) => {
     req.session.username = createdUser.username;
     req.session.logged = true;
 
-    res.redirect('/authors')
+    res.redirect('/infos')
 
 
 })

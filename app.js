@@ -34,7 +34,10 @@ app.use('/auth', usersController);
 // main hub
 app.get('/', (req, res) => {
     // res.render('index', {title: 'Hey', message: 'Hello there!'})
-    res.render('index.pug')
+    res.render('index.pug', {
+        message: req.session.message,
+        logOut: req.session.logOutMsg
+    })
 });
 
 

@@ -25,8 +25,11 @@ html
                 a(href=`/infos/${info._id}/edit`) Edit
             section
                 h2 Builds
-                //- ul
-                //-     li
+                ul
+                    //- for info.build in info.builds
+                    //- li
+                    //-     a(href=`/builds/${info.builds_id}`) #{info.builds.bname}
+                    
             section
                 form(action=`/infos/${info._id}?_method=DELETE`, method="post")
                     button(type="submit") Delete

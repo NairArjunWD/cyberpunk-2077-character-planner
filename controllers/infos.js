@@ -86,11 +86,16 @@ router.delete('/:id', (req, res) => {
 });
 
 router.post('/', async (req, res) => {
-    try {
-        const createdInfo = await Info.create(req.body);
-        res.redirect('/infos')
-    } catch {
-        res.send(err)
+    if (req.session.logged === true) {
+        try {
+            const createdInfo = await Info.create(req.body);
+            res.redirect('/infos')
+        } catch {
+            res.send(err)
+        }
+    } else {
+        req.session.logOutMsg = 'You must be logged in to create an authorization'
+        res.redirect('/')
     }
 })
 

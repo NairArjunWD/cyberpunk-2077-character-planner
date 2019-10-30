@@ -11,6 +11,10 @@ html
                     a(href='/infos') Character Info
                 li 
                     a(href='/builds') Character Build  
+
+                logOut
+                message
+                
                 h3 Login
                 form(action="/auth/login", method="post")
                     input(type="text" name="username" placeholder="username")
@@ -24,3 +28,4 @@ html
                     input(type="email" name="email" placeholder="email")
                     input(type="password" name="password" placeholder="password")
                     button(type="submit") Login
+    

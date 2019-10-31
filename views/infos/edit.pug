@@ -1,7 +1,7 @@
 html
     head   
         title edit
-        link(rel="stylesheet", href="../css/style.css")
+        link(rel="stylesheet", href="/css/style.css")
     body
         header
             h1 Edit
@@ -11,7 +11,7 @@ html
                         a(href='/') Main Hub
                     li 
                         a(href='/infos') Character List
-        main
+        main.side-background
             h2 Character Info
             form(action=`/infos/${info._id}?_method=PUT`, method="post")
                 input(

@@ -13,11 +13,31 @@ html
                         a(href='/infos/new') Create a New Character
                     li  
                         a(href="/auth/logout") Logout
-        main
+        main.side-background
             h2 My Characters
-            ul
+            ul#mySidenav.sidenav
+                //- a.closebtn(href='javascript:void(0)', onclick='closeNav()') &times;
                 for info in infos
-                    li
+                    li.icon
                         a(href=`/infos/${info._id}`) #{info.name}
                     //- a(href=info._id) info
+                    
+    //-         #mySidenav.sidenav
+    //-             a.closebtn(href='javascript:void(0)', onclick='closeNav()') &times;
+    //-             a(href='#') About
+    //-             a(href='#') Services
+    //-             a(href='#') Clients
+    //-             a(href='#') Contact
+    //-         h2 Animated Sidenav Example
+    //-         p Click on the element below to open the side navigation menu.
+    //-         span(style='font-size:30px;cursor:pointer', onclick='openNav()') &#x2630; open
+
+    //- script.
+    //-     function openNav() {
+    //-     document.getElementById("mySidenav").style.width = "250px";
+    //-     }
+    //-     function closeNav() {
+    //-     document.getElementById("mySidenav").style.width = "0";
+    //-     }
+
                              

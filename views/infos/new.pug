@@ -1,7 +1,8 @@
 html
     head 
         title create
-        link(rel="stylesheet", href="../css/style.css")
+        link(rel="stylesheet", href="/css/style.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js")
     body
         header
             h1 Create Your Character's Info 
@@ -11,63 +12,79 @@ html
                         a(href='/') Main Hub
                     li 
                         a(href='/infos/') Characters
-        main 
+        main.side-background 
             form(action="/infos", method="post")
+                label Alias: V 
+                label(for="name") Name: 
                 input(
                     type="text" 
                     name="name"
-                    placeholder='name'
+                    
+                    class='info-input'
                     autofocus
                 )
                 br 
+                label(for="Age") Age:
                 input(
                     type="number" 
                     name="age"
-                    placeholder='age'
+                    
+                    class='info-input'
                 )
                 br
                 p Voice:
-               
-                label(for="voice") Male
+                
+                label.radio(for="voice") M
                 input(
                     type="radio" 
                     name="voice" 
                     value="male"
+                    class='radio-input'
+                    span.checkmark
                 )
                 br
-                label(for="voice") Female
+                label.radio(for="voice") F
                 input(
                     type="radio" 
                     name="voice" 
                     value="female"
+                    class='radio-input'
+                    span.checkmark
                 )
                 br
                 p Sex:
                 |
-                label(for="sex") Male
+                label.radio(for="sex") M
                 input(
                     type="radio" 
                     name="sex" 
                     value='male'
+                    class='radio-input'
+                    span.checkmark
                 )
                 br
-                label(for="sex") Female
+                label.radio(for="sex") F
                 input(
                     type="radio" 
                     name="sex" 
                     value='female'
+                    class='radio-input'
+                    span.checkmark
                 )
                 br
+                label(for="ethnicity") Ethnicity: 
                 input(
                     type="text" 
                     name="ethnicity"
-                    placeholder='ethnicity'
+                    
+                    class='info-input'
                 )
                 br
-                label(for="background") Background
+                label(for="background") Background:
                 textarea(
                     name="background" 
-                    cols="30" 
+                    cols="60" 
                     rows="10"
+                    class='info-input'
                 )
                 button(type="submit") Submit

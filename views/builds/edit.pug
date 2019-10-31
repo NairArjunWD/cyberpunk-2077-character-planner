@@ -11,7 +11,7 @@ html
                         a(href='/') Main Hub
                     li 
                         a(href='/builds') Build List
-        main
+        main.side-background
             h2 Edit the Build
             form(action=`/builds/${build._id}?_method=PUT`, method="post")
                 p Background:

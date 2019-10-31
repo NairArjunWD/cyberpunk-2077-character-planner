@@ -1,158 +1,19 @@
 body {
   font: 100% "Source Code Pro", monospace;
-  color: #d40000;
-  background-color: #000000;
-  margin: 4rem 0 0 0;
-  height: 77rem;
-}
-
-.nav {
-  position: fixed;
-  border-bottom: 1px solid black;
-  width: 100%;
-  top: 0;
-  background-color: white;
-}
-
-.nav-header {
-  max-width: 75%;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 15px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.nav-left {
-  width: 33.333%;
-  text-align: left;
-}
-
-.nav-center {
-  width: 33.333%;
-  text-align: center;
-}
-
-.nav-right {
-  width: 60%;
-  text-align: right;
-}
-
-.nav-link {
-  text-decoration: none;
-  margin-left: 3%;
-  text-transform: uppercase;
-  color: black;
-}
-
-.nav-link:hover {
-  color: dodgerblue;
-  cursor: pointer;
-}
-
-.hamburger-menu {
-  width: 40px;
-  height: 25px;
-  position: relative;
-  margin: 14px 15% 0 auto;
-  z-index: 2;
-  /* display: none; */
-}
-
-.bar {
-  display: block;
-  position: absolute;
-  width: 25px;
-  height: 3px;
-  left: 0;
-  border-radius: 6px;
+  color: #c01d1d;
   background-color: black;
-  -webkit-transition: all .50s ease-in-out;
-  transition: all .50s ease-in-out;
-}
-
-.bar:nth-child(1) {
-  top: 0px;
-}
-
-.bar:nth-child(2) {
-  top: 22.5%;
-}
-
-.bar:nth-child(3) {
-  top: 45%;
-}
-
-.open > .bar {
-  -webkit-transition: all .50s ease-in-out;
-  transition: all .50s ease-in-out;
-  background-color: white;
-  z-index: 2;
-}
-
-.open > .bar:nth-child(1) {
-  top: 45%;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
-  /* transition: all .50s ease-in-out; */
-}
-
-.open > .bar:nth-child(2) {
-  left: -60px;
-  opacity: 0;
-  /* transition: all .50s ease-in-out; */
-}
-
-.open > .bar:nth-child(3) {
-  -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
-  /* transition: all .50s ease-in-out; */
-}
-
-.overlay {
-  height: 100%;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.7);
-  top: 0;
-  left: -123rem;
-  z-index: 1;
-  -webkit-transition: all .60s ease-in-out;
-  transition: all .60s ease-in-out;
-}
-
-.overlay.show {
-  left: 0;
-}
-
-.overlay-content {
-  position: relative;
-  top: 15%;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.overlay-link {
-  color: white;
+  margin: 1rem 0 0 0;
   text-decoration: none;
-  font-size: 36px;
-  display: block;
 }
 
-@media (max-width: 800px) {
-  .hamburger-menu {
-    display: block;
-  }
-  .nav-right > a {
-    display: none;
-  }
+body a, body a:active, body a:hover, body a:visited {
+  color: red;
+  text-decoration: none;
+}
+
+body a:active, body a:hover {
+  color: black;
+  background-color: #c01d1d;
 }
 
 nav {
@@ -176,5 +37,72 @@ nav {
 
 img {
   border-style: none;
+}
+
+form {
+  width: 70%;
+  background-color: black;
+  margin: 0 auto 1.25rem auto;
+  padding: 3rem .5rem;
+  border: 2px solid #c01d1d;
+}
+
+.info-input {
+  background-color: #000;
+  border: 2px solid #c01d1d;
+  color: #c01d1d;
+  font-size: 24px;
+  padding: 8px;
+  text-shadow: 0 0 1px #c01d1d;
+  -webkit-text-fill-color: transparent;
+  outline: none;
+}
+
+.parallax {
+  /* Full height */
+  height: 100%;
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#img3 {
+  /* The image used */
+  background-image: url("https://giphy.com/gifs/jtQK11lAO6EX7s3YNZ/html5");
+}
+
+#img1 {
+  background-image: url("https://b2.crackwatch.com/file/crackwatch-temp/32p98ocuc.gif");
+}
+
+#img2 {
+  background-image: url("https://vignette.wikia.nocookie.net/cyberpunk/images/7/75/Misc_Image_Night_City.jpg/revision/latest?cb=20180610223752");
+}
+
+label {
+  display: block;
+  padding-top: 5%;
+}
+
+label.radio {
+  display: inline-block;
+  padding: 2px 1em 0 0;
+}
+
+textarea {
+  background: url("https://pbs.twimg.com/media/ECbjmOLUIAA4ipV.png") center center no-repeat;
+  background-size: 70%;
+  resize: none;
+  max-width: 100%;
+}
+
+textarea:focus {
+  background: none;
+}
+
+header {
+  color: #4fc3f7;
 }
 /*# sourceMappingURL=style.css.map */

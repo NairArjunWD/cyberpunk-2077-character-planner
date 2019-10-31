@@ -19,44 +19,44 @@ html
                     a(href='/infos') Character Info
                 li 
                     a(href='/builds') Character Build  
+                
+                .switch
+                    label
+                        | Off
+                        input(type="checkbox")
+                        span.lever
+                        |    On
                 l1 
                     a(href='/auth/login') Login
                 li 
                     a(href='/auth/registration') Register
-        
-        .switch
-            label
-                | Off
-                input(type="checkbox")
-                span.lever
-                |    On
 
                 
 
         .parallax-container
             .parallax
                 img(src='https://vignette.wikia.nocookie.net/cyberpunk/images/c/c9/Johnny_Silverhand_Keanu_Reeves.jpg/revision/latest?cb=20190610022538')
-        .section.white
+        .section.yellow
             .row.container
                 h2.header Parallax
-                p.grey-text.text-darken-3.lighten-3
+                p.blue-text.text-darken-3.lighten-3
                 | Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.
         .parallax-container
             .parallax
                 img(src='https://vignette.wikia.nocookie.net/cyberpunk/images/7/75/Misc_Image_Night_City.jpg/revision/latest?cb=20180610223752')
-        .section.white
+        .section.yellow
             .row.container
                 h2.header Parallax
                 .carousel.carousel-slider.center(style='height: 400px;')
                     .carousel-fixed-item.center.with-indicators
                         a.btn.waves-effect.white.grey-text.darken-text-2 button
-                    .carousel-item.red.white-text.active(href='#one!', style='z-index: 0; opacity: 1; visibility: visible; transform: translateX(0px) translateX(0px) translateX(0px) translateZ(0px);')
+                    .carousel-item.red.blue-text.active(href='#one!', style='z-index: 0; opacity: 1; visibility: visible; transform: translateX(0px) translateX(0px) translateX(0px) translateZ(0px);')
                         h2 First Panel
                         p.white-text This is your first panel
-                    .carousel-item.amber.white-text(href='#two!', style='transform: translateX(0px) translateX(566px) translateZ(0px); z-index: -1; opacity: 1; visibility: visible;')
+                    .carousel-item.amber.blue-text(href='#two!', style='transform: translateX(0px) translateX(566px) translateZ(0px); z-index: -1; opacity: 1; visibility: visible;')
                         h2 Second Panel
                         p.white-text This is your second panel
-                    .carousel-item.green.white-text(href='#three!', style='transform: translateX(0px) translateX(-1132px) translateZ(0px); z-index: -2; opacity: 1; visibility: visible;')
+                    .carousel-item.green.blue-text(href='#three!', style='transform: translateX(0px) translateX(-1132px) translateZ(0px); z-index: -2; opacity: 1; visibility: visible;')
                         h2 Third Panel
                         p.white-text This is your third panel
                     .carousel-item.blue.white-text(href='#four!', style='transform: translateX(0px) translateX(-566px) translateZ(0px); z-index: -1; opacity: 1; visibility: visible;')
@@ -72,6 +72,28 @@ html
         .parallax-container
             .parallax
                 img(src='https://vignette.wikia.nocookie.net/cyberpunk/images/f/f9/Misc_Image_Beauty.jpg/revision/latest?cb=20180610223751&format=original')
+
+        //- .parallax#img1
+        //- div(style='height:300px;background-color:black;font-size:26px')
+        //-     | Scroll Up and Down this page to see the parallax scrolling effect.
+        //-     | This div is just here to enable scrolling.
+        //-     | Tip: Try to remove the background-attachment property to remove the scrolling effect.
+        //- .parallax#img2
+        //- div(style='height:1000px;background-color:white;font-size:36px')
+        //-     | Scroll Up and Down this page to see the parallax scrolling effect.
+        //-     | This div is just here to enable scrolling.
+        //-     | Tip: Try to remove the background-attachment property to remove the scrolling effect.
+        //- .parallax#img3
+        //- div(style='height:1000px;background-color:white;font-size:36px')
+        //-     | Scroll Up and Down this page to see the parallax scrolling effect.
+        //-     | This div is just here to enable scrolling.
+        //-     | Tip: Try to remove the background-attachment property to remove the scrolling effect.
+        //- .parallax#img4
+        //- div(style='height:1000px;background-color:white;font-size:36px')
+        //-     | Scroll Up and Down this page to see the parallax scrolling effect.
+        //-     | This div is just here to enable scrolling.
+        //-     | Tip: Try to remove the background-attachment property to remove the scrolling effect.
+
 
         script(type="text/javascript" src="js/materialize.min.js")      
         script.

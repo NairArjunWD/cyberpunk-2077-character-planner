@@ -24,58 +24,72 @@ html
                 
                 p Background:
                
-                label(for="background") Nomad
-                input(
-                    type="radio" 
-                    name="background" 
-                    value="nomad"
-                )
+                label(for="nomad") Nomad
+                    input(
+                        type="radio" 
+                        name="background" 
+                        value="nomad"
+                        id="nomad"
+                    )
                 br
-                label(for="background") Street Kid
-                input(
-                    type="radio" 
-                    name="background" 
-                    value="street"
-                )
+                label(for="street") Street Kid
+                    input(
+                        type="radio" 
+                        name="background" 
+                        value="street"
+                        id="street"
+                    )
                 br
-                label(for="background") Corpo
-                input(
-                    type="radio" 
-                    name="background" 
-                    value="corpo"
-                )
+                label(for="corpo") Corpo
+                    input(
+                        type="radio" 
+                        name="background" 
+                        value="corpo"
+                        id="corpo"
+                    )
                 br
                 p Class:
                 |
-                label(for="class") Solo
-                input(
-                    type="radio" 
-                    name="class" 
-                    value='solo'
-                )
+                label(for="solo") Solo
+                    input(
+                        type="radio" 
+                        name="class" 
+                        value='solo'
+                        id='solo'
+                    )
                 br
-                label(for="class") Techie
-                input(
-                    type="radio" 
-                    name="class" 
-                    value='techie'
-                )
+                label(for="techie") Techie
+                    input(
+                        type="radio" 
+                        name="class" 
+                        value='techie'
+                        id='techie'
+                    )
                 br
-                label(for="class") Netrunner
-                input(
-                    type="radio" 
-                    name="class" 
-                    value='netrunner'
-                )
+                label(for="netrunner") Netrunner
+                    input(
+                        type="radio" 
+                        name="class" 
+                        value='netrunner'
+                        id='netrunner'
+                    )
                 br
                 |
                 p Weapons
                 |
                 label(for="melee") Melee Weapon
                 select(name="melee")
-                    option(value="Mantis Blades") Mantis Blades
-                    option(value="Gravity Hammer") Gravity Hammer
-                    option(value="Katana") Katana
+                    outgroup
+                        option(value="Mantis Blades") Mantis Blades
+                        option(value="Gravity Hammer") Gravity Hammer
+                        option(value="Katana") Katana   
+                    optgroup 
+                    label Ranged
+                        option(value="Constitutional Arms M2067 Defender") Constitutional Arms M2067 Defender
+                    option(value="Militech_ARK-44") Militech_ARK-44
+                    option(value="Militech_M-10AF_Lexington") Militech_M-10AF_Lexington
+                    option(value="Militech_Crusher") Militech_Crusher
+                    option(value="Militech_M-31A1_AICW") Militech_M-31A1_AICW
                 br
                 label(for="ranged") Ranged Weapons
                 select(name="ranged")
@@ -85,5 +99,9 @@ html
                     option(value="Militech_Crusher") Militech_Crusher
                     option(value="Militech_M-31A1_AICW") Militech_M-31A1_AICW
                 br
+                
+                
                 button(type="submit") Submit
+
+                
                 

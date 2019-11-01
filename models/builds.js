@@ -4,7 +4,8 @@ const buildSchema = new mongoose.Schema({
     bname: String,
     background: String,
     class: String,
-    melee: String
+    prime: String,
+    second: String
 });
 
 const Build = mongoose.model('Build', buildSchema);

@@ -17,7 +17,7 @@ body {
   
  
   #{$a-tags} {
-    color: red;
+    color: $terminal-text-color;
     text-decoration: none;
   }
   #{$a-tags-hover} {
@@ -29,146 +29,148 @@ body {
   
   
 }
+h1 {
+    color: $terminal-text-color;
+}
+.nav {
+    position: fixed;
+    border-bottom: 1px solid black;
+    width: 100%;
+    top: 0;
+    background-color: rgb(255, 255, 255);
+}
 
-// .nav {
-//     position: fixed;
-//     border-bottom: 1px solid black;
-//     width: 100%;
-//     top: 0;
-//     background-color: rgba(255, 255, 255, .5);
-// }
+.nav-header {
+    max-width: 75%;
+    margin: 0 auto;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+}
 
-// .nav-header {
-//     max-width: 75%;
-//     margin: 0 auto;
-//     display: flex;
-//     padding: 15px;
-//     align-items: center;
-// }
+.nav-left {
+    width: 33.333%;
+    text-align: left;
 
-// .nav-left {
-//     width: 33.333%;
-//     text-align: left;
+}
 
-// }
+.nav-center {
+    width: 33.333%;
+    text-align: center;
+}
 
-// .nav-center {
-//     width: 33.333%;
-//     text-align: center;
-// }
+.nav-right {
+    width: 60%;
+    text-align: right;
+}
 
-// .nav-right {
-//     width: 60%;
-//     text-align: right;
-// }
+.nav-link {
+    text-decoration: none;
+    margin-left: 3%;
+    text-transform: uppercase;
+    color: black;
+}
 
-// .nav-link {
-//     text-decoration: none;
-//     margin-left: 3%;
-//     text-transform: uppercase;
-//     color: black;
-// }
+.nav-link:hover {
+    color: dodgerblue;
+    cursor: pointer;
+}
 
-// .nav-link:hover {
-//     color: dodgerblue;
-//     cursor: pointer;
-// }
+.hamburger-menu {
+    width: 40px;
+    height: 25px;
+    position: relative;
+    margin: 14px 15% 0 auto;
+    z-index: 2;
+    /* display: none; */
+}
 
-// .hamburger-menu {
-//     width: 40px;
-//     height: 25px;
-//     position: relative;
-//     margin: 14px 15% 0 auto;
-//     z-index: 2;
-//     /* display: none; */
-// }
+.bar {
+    display: block;
+    position: absolute;
+    width: 25px;
+    height: 3px;
+    left: 0;
+    border-radius: 6px;
+    background-color: black;
+    transition: all .50s ease-in-out;
+}
 
-// .bar {
-//     display: block;
-//     position: absolute;
-//     width: 25px;
-//     height: 3px;
-//     left: 0;
-//     border-radius: 6px;
-//     background-color: black;
-//     transition: all .50s ease-in-out;
-// }
+.bar:nth-child(1) {
+    top:0px;
+}
 
-// .bar:nth-child(1) {
-//     top:0px;
-// }
+.bar:nth-child(2) {
+    top: 22.5%;
+}
 
-// .bar:nth-child(2) {
-//     top: 22.5%;
-// }
+.bar:nth-child(3) {
+    top: 45%;
+}
 
-// .bar:nth-child(3) {
-//     top: 45%;
-// }
+.open > .bar {
+    transition: all .50s ease-in-out;
+    background-color: white;
+    z-index: 2;
+}
 
-// .open > .bar {
-//     transition: all .50s ease-in-out;
-//     background-color: white;
-//     z-index: 2;
-// }
+.open > .bar:nth-child(1) {
+    top: 45%;
+    transform: rotate(135deg);
+    /* transition: all .50s ease-in-out; */
+}
 
-// .open > .bar:nth-child(1) {
-//     top: 45%;
-//     transform: rotate(135deg);
-//     /* transition: all .50s ease-in-out; */
-// }
+.open > .bar:nth-child(2) {
+    left: -60px;
+    opacity: 0;
+    /* transition: all .50s ease-in-out; */
+}
 
-// .open > .bar:nth-child(2) {
-//     left: -60px;
-//     opacity: 0;
-//     /* transition: all .50s ease-in-out; */
-// }
+.open > .bar:nth-child(3) {
+    transform: rotate(-135deg);
+    /* transition: all .50s ease-in-out; */
+}
 
-// .open > .bar:nth-child(3) {
-//     transform: rotate(-135deg);
-//     /* transition: all .50s ease-in-out; */
-// }
+.overlay {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: -123rem;
+    z-index: 1;
+    transition: all .60s ease-in-out;
+}
 
-// .overlay {
-//     height: 100%;
-//     width: 100%;
-//     display: flex;
-//     position: fixed;
-//     background-color: rgba(0, 0, 0, 0.7);
-//     top: 0;
-//     left: -123rem;
-//     z-index: 1;
-//     transition: all .60s ease-in-out;
-// }
+.overlay.show {
+    left: 0;
+}
 
-// .overlay.show {
-//     left: 0;
-// }
+.overlay-content {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
 
-// .overlay-content {
-//     position: relative;
-//     top: 15%;
-//     width: 100%;
-//     text-align: center;
-//     margin-top: 30px;
-// }
+.overlay-link {
+    color: white;
+    text-decoration: none;
+    font-size: 36px;
+    display: block;
+}
 
-// .overlay-link {
-//     color: white;
-//     text-decoration: none;
-//     font-size: 36px;
-//     display: block;
-// }
+@media (max-width: 800px) {
+    .hamburger-menu {
+        display: block;
+    }
 
-// @media (max-width: 800px) {
-//     .hamburger-menu {
-//         display: block;
-//     }
-
-//     .nav-right > a {
-//         display: none;
-//     }
-// }
+    .nav-right > a {
+        display: none;
+    }
+}
 
 nav {
     text-decoration: none;
@@ -213,6 +215,7 @@ form {
     padding: 3rem .5rem; 
     border: 2px solid $terminal-text-color;
     //  -webkit-filter: blur(1px);
+    font-size: 24px;
 }
 
 .info-input {
@@ -249,18 +252,22 @@ form {
   background-size: cover;
 }
 
-#img3 {
+#img4 {
     /* The image used */
-  background-image: url('https://giphy.com/gifs/jtQK11lAO6EX7s3YNZ/html5');
+  background-image: url('https://gamespot1.cbsistatic.com/uploads/screen_kubrick/1577/15776161/3402571-0539057649-33987.jpg');
 
 }
 
-#img1{
+#img3{
     background-image: url('https://b2.crackwatch.com/file/crackwatch-temp/32p98ocuc.gif')
 }
 
 #img2 {
     background-image: url('https://vignette.wikia.nocookie.net/cyberpunk/images/7/75/Misc_Image_Night_City.jpg/revision/latest?cb=20180610223752');
+}
+
+#img1 {
+    background-image: url('https://steamuserimages-a.akamaihd.net/ugc/789733306595393166/3915C3F729E3B5BFCBEF9A4F5D27B355F6E9C9FE/');
 }
 
 // .side-background {
@@ -278,6 +285,7 @@ form {
 label {
     display: block;
     padding-top: 5%;
+    
 }
 
 
@@ -303,13 +311,13 @@ header {
     color:#4fc3f7;
 }
 
-/* HIDE RADIO */
-[type=radio] { 
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+// /* HIDE RADIO */
+// [type=radio] { 
+//   position: absolute;
+//   opacity: 0;
+//   width: 0;
+//   height: 0;
+// }
 
 /* IMAGE STYLES */
 [type=radio] + label {
@@ -319,4 +327,33 @@ header {
 /* CHECKED STYLES */
 [type=radio]:active + label {
   outline: 2px solid #f00;
+}
+
+.square {
+    border: 2px solid red;
+    margin: 0 60% 0 0;
+}   
+
+#rad6 {
+    background: url('https://vignette.wikia.nocookie.net/cyberpunk/images/f/fe/Char_profile_bug.jpg/revision/latest/scale-to-width-down/308?cb=20190723185215');
+    background-repeat: no-repeat;
+    background-size: auto;
+}
+
+// main {
+//     background-image: url('https://vignette.wikia.nocookie.net/cyberpunk/images/f/fc/Role_Profile_Nomad.png/revision/latest?cb=20130719202715');
+// }
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+.radio {
+  float: left;
+  width: 50%;
+}
+
+li {
+    list-style-type: none;
 }

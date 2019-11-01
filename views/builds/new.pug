@@ -5,13 +5,13 @@ html
         //- link(rel="stylesheet", href="https://unpkg.com/terminal.css@0.7.1/dist/terminal.min.css")
     body
         header
-            h1 Create Your Character's Info 
+            h1 Create Your Character's Build
             nav 
                 ul
                     li 
                         a(href='/') Main Hub
                     li 
-                        a(href='/builds/') Characters
+                        a(href='/builds/') Builds
         main.side-background
             form(action="/builds", method="post")
                 select(name='infoId')
@@ -20,65 +20,93 @@ html
                     //- a(href=info._id) info
                 
                 p Build Name:
-                input(type="text", name="bname")
+                    input(type="text", name="bname", class='info-input')
                 
-                p Background:
-               
-                label(for="nomad") Nomad
-                    input(
-                        type="radio" 
-                        name="background" 
-                        value="nomad"
-                        id="nomad"
-                    )
-                br
-                label(for="street") Street Kid
-                    input(
-                        type="radio" 
-                        name="background" 
-                        value="street"
-                        id="street"
-                    )
-                br
-                label(for="corpo") Corpo
-                    input(
-                        type="radio" 
-                        name="background" 
-                        value="corpo"
-                        id="corpo"
-                    )
-                br
-                p Class:
+                div.radio
+                    p Background:
+                
+                    label.square#rad1(for="nomad") Nomad
+                        input(
+                            type="radio" 
+                            name="background" 
+                            value="nomad"
+                            id="nomad"
+                        )
+                    br
+                    label.square#rad2(for="street") Street Kid
+                        input(
+                            type="radio" 
+                            name="background" 
+                            value="street"
+                            id="street"
+                        )
+                    br
+                    label.square#rad3(for="corpo") Corpo
+                        input(
+                            type="radio" 
+                            name="background" 
+                            value="corpo"
+                            id="corpo"
+                        )
+                    br
+
+                div.radio
+                    p Class:
+                    |
+                    label.square#rad4(for="solo") Solo
+                        input(
+                            type="radio" 
+                            name="class" 
+                            value='solo'
+                            id='solo'
+                        )
+                    br
+                    label.square#rad5(for="techie") Techie
+                        input(
+                            type="radio" 
+                            name="class" 
+                            value='techie'
+                            id='techie'
+                        )
+                    br
+                    label.square#rad6(for="netrunner") Netrunner
+                        input(
+                            type="radio" 
+                            name="class" 
+                            value='netrunner'
+                            id='netrunner'
+                        )
+                    br
+                    
+                //- label(for="") Strength
+                //-     #input_div
+                //-         input#count(type='text', size='25', value='1')
+                //-         input#moins(type='button', value='-', onclick='minus()')
+                //-         input#plus(type='button', value='+', onclick='plus()')
+                div.column
+                    p Strength:
+                    input(type="number", name="strength", class='info-input')
+
+                    p Constitution:
+                    input(type="number", name="constitution", class='info-input')
+
+                    p Intelligence:
+                    input(type="number", name="intelligence", class='info-input')
+                div.column
+                    p Reflexes:
+                    input(type="number", name="reflexes", class='info-input')
+
+                    p Tech:
+                    input(type="number", name="tech", class='info-input')
+
+                    p Cool:
+                    input(type="number", name="cool", class='info-input')
+
                 |
-                label(for="solo") Solo
-                    input(
-                        type="radio" 
-                        name="class" 
-                        value='solo'
-                        id='solo'
-                    )
-                br
-                label(for="techie") Techie
-                    input(
-                        type="radio" 
-                        name="class" 
-                        value='techie'
-                        id='techie'
-                    )
-                br
-                label(for="netrunner") Netrunner
-                    input(
-                        type="radio" 
-                        name="class" 
-                        value='netrunner'
-                        id='netrunner'
-                    )
-                br
+                p ---------------------------------------------------------
                 |
-                p Weapons
-                |
-                label(for="melee") Melee Weapon
-                select(name="melee")
+                label(for="prime") Primary Weapon
+                select(name="prime")
                     outgroup
                         option(value="Mantis Blades") Mantis Blades
                         option(value="Gravity Hammer") Gravity Hammer
@@ -104,4 +132,17 @@ html
                 button(type="submit") Submit
 
                 
-                
+    //- script.
+    //-     | let count = 1;
+    //-     | let countEl = document.getElementById('count');
+    //-     | function plus(){
+    //-         | count++;
+    //-         | countEl.value = count;
+    //-     | }
+    //-     | function minus(){
+    //-         | if (count > 1) {
+    //-             | count--;
+    //-             | countEl.value = count;
+    //-         | }
+    //-     | }
+                    

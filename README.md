@@ -17,4 +17,4 @@ My options were limited due to a lot of the info of the game not being public ye
 
 ## Character Planner - Build
 
-This is the stats planner of your game. Here is how you plan out your gameplay.
+This is the stats planner of your game. Here is how you plan out your gameplay. You first select the character and choose the offical game background an class. There were suppose to be pictures included, but problems arosed. 

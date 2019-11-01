@@ -270,6 +270,8 @@ form {
     background-image: url('https://steamuserimages-a.akamaihd.net/ugc/789733306595393166/3915C3F729E3B5BFCBEF9A4F5D27B355F6E9C9FE/');
 }
 
+
+
 // .side-background {
     
 // }
@@ -356,4 +358,28 @@ header {
 
 li {
     list-style-type: none;
+}
+
+@media (max-width: 1280px) {
+    form {
+        width: 70%;
+    background-color: black;
+    margin: 0 auto 1.25rem auto;
+    padding: 3rem .5rem; 
+    border: 2px solid $terminal-text-color;
+    //  -webkit-filter: blur(1px);
+    font-size: 24px;
+    }
+}
+
+@media (max-width: 1200px) {
+    form {
+        width: 70%;
+    background-color: black;
+    margin: 0 auto 1.25rem auto;
+    padding: 3rem .5rem; 
+    border: 2px solid $terminal-text-color;
+    //  -webkit-filter: blur(1px);
+    font-size: 24px;
+    }
 }
